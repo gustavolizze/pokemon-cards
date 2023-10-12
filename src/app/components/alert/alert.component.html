@@ -1,0 +1,16 @@
+
+<div class="container" *ngIf="showAlert"  >
+<ng-container [ngSwitch]="message?.type" >
+  <div *ngSwitchCase="alertType().Error" class="error">
+    <h3 class="title">Acho que ...</h3>
+    <span class="message">{{ message?.message }}</span>
+    <a class="close" (click)="closeAlert()" >x</a>
+  </div>
+  <div *ngSwitchDefault class="success">
+    <h3 class="title">É isso aí</h3>
+    <span class="message">{{ message?.message }}</span>
+    <a class="close" (click)="closeAlert()" >x</a>
+  </div>
+</ng-container>
+</div>
+<ng-content></ng-content>

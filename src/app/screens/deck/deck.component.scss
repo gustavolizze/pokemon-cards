@@ -1,0 +1,112 @@
+.container {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.info-box,
+.title,
+.label {
+    display: block;
+}
+
+.info-box {
+    text-align: center;
+    border-radius: 10px;
+    background-color: var(--light-red);
+    border: 1px solid var(--red);
+    margin: 20px;
+    padding: 10px;
+    color: var(--white);
+    position: relative;
+}
+
+.title {
+    text-align: center;
+    color: var(--white);
+}
+
+.label {
+    text-align: left;
+    color: var(--white);
+}
+
+.highlight {
+    color: var(--white);
+}
+
+.group {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.button-group {
+    display: inline-flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    position: relative;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+    outline: 0px;
+    border: 0px;
+    margin: 0px;
+    cursor: pointer;
+    user-select: none;
+    vertical-align: middle;
+    appearance: none;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.875rem;
+    line-height: 1.75;
+    letter-spacing: 0.02857em;
+    text-transform: uppercase;
+    min-width: 64px;
+    padding: 6px 16px;
+    border-radius: 4px;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    color: var(--red);
+    background-color: var(--white);
+}
+
+.button-group.selected {
+    color: var(--white);
+    background-color: var(--red);
+}
+
+.first-button {
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border-right: 1px solid var(--white);
+    border-top-color: var(--white);
+    border-bottom-color: var(--white);
+    border-left-color: var(--white);
+}
+
+.last-button {
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+
+.cards {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    overflow: scroll;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    height: calc(100vh - 350px);
+    margin-top: 20px;
+}
+
+.button {
+    position: absolute;
+    top: 38px;
+    right: 25px;
+    z-index: 10;
+}
+  

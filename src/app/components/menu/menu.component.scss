@@ -1,0 +1,42 @@
+.menu {    
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px;
+    position: relative;
+    overflow: scroll;
+}
+
+
+.icon {
+    height: 40px;
+    width: 40px;
+    margin: 0 15px 0 15px;
+}
+
+.button {    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    background: rgba(240, 148, 122, 0.5);
+    color: var(--white);
+    padding: 5px 10px;
+    border-radius: 15px;
+    box-shadow: 5px 5px 5px 1px rgba(0, 0, 0, 0.1);
+    text-shadow: 0px 0px 0px rgba(0, 0, 0, 0.5);
+    transition: background 0.5s ease-in-out;
+}
+
+
+.button:hover {
+    background: rgba(240, 148, 122, 0.7);
+}
+
+.decks {
+    display: flex;
+    width: 100%;
+    gap: 10px;
+}

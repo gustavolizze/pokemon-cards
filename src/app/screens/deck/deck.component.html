@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="info-box">
+    <span class="title">Mural</span>
+    <span class="labels">
+      <span class="label">Cartas no baralho: <br> <span class="highlight">{{ cardsOnDeck }}/24</span></span>
+      <span class="label">Cartas selecionadas:: <br> <span
+          class="highlight">{{ type === 'search' ? cardsSelectedToAdd : cardsSelectedToRemove }}</span></span>
+    </span>
+    <pokemon-button *ngIf="inactiveCards" (click)="saveDeletes()" class="button">
+      Remover Pokemons
+    </pokemon-button>
+    <pokemon-button *ngIf="showSave" (click)="save()" class="button">
+      Salvar Pokemons
+    </pokemon-button>
+  </div>
+  <div class="group">
+    <button class="button-group first-button" (click)="selectMode('search')"
+      [ngClass]="{ 'selected': type === 'search' }">Obter Cartas</button>
+    <button class="button-group last-button" (click)="selectMode('edit')"
+      [ngClass]="{ 'selected': type === 'edit' }">Organizar deck</button>
+  </div>
+  <ng-container [ngSwitch]="type">
+    <div *ngSwitchCase="'edit'" class="edit">
+      <div class="cards" *ngIf="deck?.getCards() !== undefined">
+        <pokemon-card (onActive)="removeCard($event)" *ngFor="let card of deck?.getCards()" [active]="card.active"
+          [card]="card"></pokemon-card>
+      </div>
+    </div>
+    <div *ngSwitchCase="'search'" class="search">
+      <div class="cards" *ngIf="cards">
+        <pokemon-card (onActive)="selectCard($event)" *ngFor="let card of cards" [active]="card.active" [card]="card">
+        </pokemon-card>
+      </div>
+    </div>
+  </ng-container>
+</div>

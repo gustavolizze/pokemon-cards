@@ -1,0 +1,12 @@
+<div class="menu">
+  <button (click)="openDecks()" class="button">
+    <img class="icon" src="assets/bag.png" alt="Mochila" />
+    {{viewDecks === true ? 'Guardar' : 'Ver Baralhos'}}
+    <span></span>
+  </button>
+  <div class="decks" *ngIf="viewDecks"  >
+    <ng-container *ngFor="let deck of decks" >
+      <pokemon-deck-card (click)="selectDeck(deck.name)" >{{deck.name}}</pokemon-deck-card>
+    </ng-container>
+  </div>
+</div>
