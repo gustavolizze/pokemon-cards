@@ -130,6 +130,8 @@ export class DeckComponent implements OnInit {
                 .filter(card => card.active);
 
             if (!cards?.length) {
+                this.deck?.setCards([]);
+                this.gameService.save(this.deck);
                 this.onSearchMode();
                 return;
             } else {
