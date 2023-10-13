@@ -51,10 +51,6 @@ export class GameService {
 
         const cards = deck.getCards();
 
-        if (cards.length <= 0) {
-            throw new Error('Selecione uma carta pelo menos!');
-        }
-
         if (cards.length > 24) {
             throw new Error('Somente 24 cartas!');
         }
@@ -96,6 +92,11 @@ export class GameService {
     }
 
     public closeMenu() {
+        this._menu.next(false);
+    }
+
+    public goToScreen(screen: Screen) {
+        this._gameScreen.next(screen);
         this._menu.next(false);
     }
     

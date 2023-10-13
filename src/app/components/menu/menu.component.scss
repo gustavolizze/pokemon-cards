@@ -8,6 +8,11 @@
     overflow: scroll;
 }
 
+.buttons {
+    display: flex;
+    gap: 20px;
+}
+
 
 .icon {
     height: 40px;
@@ -38,5 +43,13 @@
 .decks {
     display: flex;
     width: 100%;
-    gap: 10px;
+    padding: 70px 0px;
+    flex-wrap: wrap;
+    overflow: hidden;
+    justify-content: space-between;
+    gap: 70px;
+}
+
+.deck {
+    margin: 20px;
 }

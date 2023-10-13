@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { GameService } from 'app/game';
-import { Deck } from "app/models";
+import { Deck, Screen } from "app/models";
 import { AlertService } from "../alert";
 
 @Component({
@@ -11,13 +11,22 @@ import { AlertService } from "../alert";
 export class MenuComponent implements OnInit {
     viewDecks: boolean = false;
     decks: Deck[] = [];
+    screen: Screen = Screen.AddDeck;
 
     constructor(
         private gameService: GameService,
         private alertService: AlertService
         ) {}
 
+    get getScreen() : typeof Screen {
+        return Screen;
+    }
+
     ngOnInit(): void {
+        this.gameService.screen().subscribe(screen => {
+            this.screen = screen;
+        });
+
         this.gameService.decks().subscribe(decks => {
             this.decks = decks;
         });
@@ -38,5 +47,9 @@ export class MenuComponent implements OnInit {
         catch(error: any) {
             this.alertService.showError(error?.message);
         }
+    }
+
+    addDeck() {
+        this.gameService.goToScreen(Screen.AddDeck);
     }
 }

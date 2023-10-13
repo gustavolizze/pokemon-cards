@@ -1,7 +1,6 @@
-.container {
-    position: relative;
-    width: 100%;
-    height: 70px;
+:host {
+  width: 100px;
+  height: 70px;
 }
 
 .deck {
@@ -9,14 +8,12 @@
   height: 70px;
   font-family: 'Ubuntu', "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   text-align: center;
+  position: relative;
 }
 
 
 .deck-item {
-  display: block;
   cursor: pointer;
- 	width: 100%;
-  height: 100%;
   position: absolute;
   border-radius: .3em; 
   border: .1em solid rgba(var(--dark-black), .15);
@@ -26,6 +23,11 @@
   
   transform-origin: 90% 92%;
   transition: background 0.3s ease-in-out;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: inline-block;
 }
 
 .deck-item:last-of-type:after {

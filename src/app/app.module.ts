@@ -5,7 +5,6 @@ import { CommonModule } from '@angular/common';
 import { AppComponent } from './app.component';
 import { ComponentsModule } from 'app/components';
 import { ScreensModule } from 'app/screens';
-import { AppRoutingModule } from './app-routing.module';
 import { GameModule } from './game';
 
 @NgModule({
@@ -18,8 +17,6 @@ import { GameModule } from './game';
     CommonModule,
     GameModule,
     ScreensModule,
-
-    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
